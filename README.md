@@ -34,7 +34,11 @@ The edge function accepts POST requests with a JSON body containing a `user_id` 
 
 ```javascript
 const { data, error } = await supabase.functions.invoke('onesignal-push-notify', {
-  body: { user_id: 'user-123' },
+  body: { 
+    user_id: 'user-123',
+    title: 'Custom Title',  // Optional - defaults to "Test OneSignal Push"
+    message: 'This is a custom message'  // Optional - defaults to a standard message
+  },
 })
 ```
 
@@ -49,6 +53,8 @@ const response = await fetch('https://your-project-ref.supabase.co/functions/v1/
   },
   body: JSON.stringify({
     user_id: 'user-123',
+    title: 'Custom Title',  // Optional
+    message: 'This is a custom message'  // Optional
   }),
 })
 ```
@@ -63,8 +69,8 @@ The function returns a JSON response with:
 
 - The `user_id` parameter must match the external ID of a user in your OneSignal app
 - The function automatically converts the user_id to uppercase when sending to OneSignal
-- Currently, the function sends a test notification with a fixed title and content
-- For production use, consider extending the function to accept custom notification content
+- The function accepts optional `title` and `message` parameters to customize notifications
+- If not provided, a default title "Test OneSignal Push" and a generic message will be used
 
 ## Supabase OneSignal SDK Integration
 

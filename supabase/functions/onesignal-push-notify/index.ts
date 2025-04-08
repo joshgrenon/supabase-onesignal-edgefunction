@@ -16,7 +16,9 @@ Deno.serve(async (req) => {
   }
 
   const { 
-    user_id
+    user_id,
+    title = "Test OneSignal Push",
+    message
   } = await req.json()
 
   if (!user_id) {
@@ -39,10 +41,10 @@ Deno.serve(async (req) => {
         },
         target_channel: "push",
         headings: { 
-          en: "Test OneSignal Push"
+          en: title
         },
         contents: { 
-          en: `Congrats, you sent a push notification to ${user_id}`
+          en: message || `Congrats, you sent a push notification to ${user_id}`
         }
       })
     });
