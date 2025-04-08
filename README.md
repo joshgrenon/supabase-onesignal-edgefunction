@@ -1,6 +1,6 @@
 # Supabase OneSignal Push Notification Edge Function
 
-This repository contains a Supabase Edge Function for sending push notifications via OneSignal.
+This repository contains a [Supabase](https://supabase.com) Edge Function for sending push notifications via [OneSignal](https://onesignal.com).
 
 ## Prerequisites
 
@@ -66,6 +66,11 @@ The function returns a JSON response with:
 - The function automatically converts the user_id to uppercase when sending to OneSignal
 - Currently, the function sends a test notification with a fixed title and content
 - For production use, consider extending the function to accept custom notification content
+
+## Supabase OneSignal SDK Integration
+
+If you prefer to use the OneSignal SDK instead of the REST API approach outlined in this repository, check out the official Supabase OneSignal integration guide:
+[https://supabase.com/partners/integrations/onesignal](https://supabase.com/partners/integrations/onesignal)
 
 ## Troubleshooting
 
