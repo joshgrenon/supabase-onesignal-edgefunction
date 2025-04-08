@@ -1,5 +1,4 @@
-# Supabase OneSignal Push Notification Edge Function
-
+# Supabase OneSignal (REST API Implementation) Push Notification Edge Function
 This repository contains a [Supabase](https://supabase.com) Edge Function for sending push notifications via [OneSignal](https://onesignal.com).
 
 ## Prerequisites
