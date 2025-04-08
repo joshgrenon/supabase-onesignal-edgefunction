@@ -26,6 +26,8 @@ supabase secrets set ONESIGNAL_APP_ID=your-onesignal-app-id --project-ref your-p
 
 > **Note:** This edge function uses OneSignal's REST API directly and does not require any OneSignal SDK or additional dependencies to be installed.
 
+For more information about the OneSignal REST API, see the [OneSignal API Reference](https://documentation.onesignal.com/reference/quick-start-api-guide).
+
 ## Usage
 
 The edge function accepts POST requests with a JSON body containing a `user_id` parameter.
